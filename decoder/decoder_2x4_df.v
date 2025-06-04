@@ -21,12 +21,12 @@
 
 
 module decoder_2x4_df(
-    input a, b,
+    input a, b, e,
     output q0, q1, q2, q3
     );
     
-    assign q0 = ~a & ~b;
-    assign q1 = ~a & b;
-    assign q2 = a & ~b;
-    assign q3 = a & b;
+    assign q0 = ~a & ~b & e;
+    assign q1 = ~a & b & e;
+    assign q2 = a & ~b & e;
+    assign q3 = a & b & e;
 endmodule

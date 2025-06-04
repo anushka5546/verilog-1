@@ -21,15 +21,15 @@
 
 
 module decoder_2x4_beh(
-    input a, b,
+    input a, b, e,
     output reg q0, q1, q2, q3
     );
    
     always @(a, b)
     begin
-        q0 = ~a & ~b;
-        q1 = ~a & b;
-        q2 = a & ~b;
-        q3 = a & b;
+        q0 = ~a & ~b & e;
+        q1 = ~a & b & e;
+        q2 = a & ~b & e;
+        q3 = a & b & e;
     end
 endmodule
