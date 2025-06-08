@@ -27,7 +27,7 @@ module adder_substractor
     input add_n,
     output [n - 1:0] s,
     output cout,
-    output overflow         //Overflow only matters only matters if we consider thee inputs to be signed
+    output overflow         //Overflow only matters if we consider the inputs to be signed
     );
     
     wire [n - 1:0] xored_y;
