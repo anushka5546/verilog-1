@@ -24,21 +24,14 @@ module decoder_3x8_beh_tb(
 
     );
     
-    reg a, b, c;
-    wire q0, q1, q2, q3, q4, q5, q6, q7;
+    reg [2:0] a; 
+    reg en;
+    wire [7:0] q;
 
     decoder_3x8_beh uut(
         .a(a),
-        .b(b),
-        .c(c),
-        .q0(q0),
-        .q1(q1),
-        .q2(q2),
-        .q3(q3),
-        .q4(q4),
-        .q5(q5),
-        .q6(q6),
-        .q7(q7)
+        .en(en),
+        .q(q)
     );
     
     initial
@@ -48,37 +41,29 @@ module decoder_3x8_beh_tb(
     
     initial
     begin
-        a = 1'b0;           // q0
-        b = 1'b0;
-        c = 1'b0;
+        a = 3'b000;           // q0
+        en = 1'b0;
         #10
-        a = 1'b0;           // q1
-        b = 1'b1;
-        c = 1'b0;
+        a = 3'b001;           // q1
+        en = 1'b0;
         #10
-        a = 1'b1;           // q2
-        b = 1'b0;
-        c = 1'b0;
+        a = 3'b010;           // q2  
+        en = 1'b0;
         #10
-        a = 1'b1;           // q3
-        b = 1'b1;
-        c = 1'b0;
+        a = 3'b011;           // q3
+        en = 1'b0;
         #10
-        a = 1'b0;           // q4
-        b = 1'b0;
-        c = 1'b1;
+        a = 3'b000;           // q4
+        en = 1'b1;
         #10
-        a = 1'b0;           // q5
-        b = 1'b1;          
-        c = 1'b1;
+        a = 3'b001;           // q5
+        en = 1'b1;
         #10
-        a = 1'b1;           // q6
-        b = 1'b0;
-        c = 1'b1;
+        a = 3'b010;           // q6
+        en = 1'b1;
         #10
-        a = 1'b1;           // q7
-        b = 1'b1;
-        c = 1'b1;
+        a = 3'b011;           // q7
+        en = 1'b1;
         
     end
 endmodule
