@@ -21,15 +21,43 @@
 
 
 module decoder_2x4_beh(
-    input a, b, e,
-    output reg q0, q1, q2, q3
+    input [1:0] a,
+    input en,
+    output reg [3:0] q
     );
    
-    always @(a, b)
+    always @(a, en)
     begin
-        q0 = ~a & ~b & e;
-        q1 = ~a & b & e;
-        q2 = a & ~b & e;
-        q3 = a & b & e;
+        /*q0 = ~a & ~b & en;
+        q1 = ~a & b & en;
+        q2 = a & ~b & en;
+        q3 = a & b & en;*/
+        
+        q = 4'b0000;                   // Default value
+        /*if (en)
+        begin
+            if (a == 2'b00)
+                q[0] = 1;
+            else if (a == 2'b01)
+                q[1] = 1;
+            else if (a == 2'b10)
+                q[2] = 1;
+            else if (a == 2'b11)
+                q[3] = 1;
+            else
+                q = 4'b0000;
+        end*/
+        
+        // Case Block
+        if (en)
+        begin
+            case (a)
+            0:  q[0] = 1; 
+            1:  q[1] = 1;
+            2:  q[2] = 1;
+            3:  q[3] = 1;
+            default: q = 4'b0000;
+            endcase
+        end
     end
 endmodule
