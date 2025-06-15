@@ -21,27 +21,22 @@
 
 
 module decoder_3x8_beh(
-    input a, b, c,
-    output q0, q1, q2, q3, q4, q5, q6, q7
+    input [2:0] a,
+    input en,
+    output [7:0] q
     );
     
+//    wire ena;
+//    assign ena = a[2] & 
     decoder_2x4_beh D1(
         .a(a),
-        .b(b),
-        .e(~c),
-        .q0(q0),
-        .q1(q1),
-        .q2(q2),
-        .q3(q3)
+        .en(~a[2] & en),
+        .q(q[3:0])
     );
     
     decoder_2x4_beh D2(
         .a(a),
-        .b(b),
-        .e(c),
-        .q0(q4),
-        .q1(q5),
-        .q2(q6),
-        .q3(q7)
+        .en(a[2] & en),
+        .q(q[7:4])
     );
 endmodule
