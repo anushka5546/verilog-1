@@ -30,7 +30,7 @@ module half_adder_beh(
     // Sum
         s = x ^ y;
      // Carry
-        if (x == 1 && y == 1)
+        if (x & y)
         begin
             c = 1'b1;
         end 
