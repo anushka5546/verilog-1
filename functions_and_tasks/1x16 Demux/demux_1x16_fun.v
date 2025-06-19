@@ -11,7 +11,7 @@ module demux_1x16_fun(
         input [3:0] s;
         integer k;
         begin
-            demux_1x16 = 16'd0;
+            demux_1x16 = 16'd0;                    // Default value
             for(k = 0; k < 16; k = k + 1) begin
                 if (k == s)
                     demux_1x16[k] = f;
