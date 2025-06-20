@@ -1,4 +1,4 @@
-# 🧠 Verilog Digital Design Projects
+# 🧠 Verilog Lab — Digital Design Playground
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
 ![HDL](https://img.shields.io/badge/Language-Verilog-orange)
