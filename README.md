@@ -57,6 +57,6 @@ Feel free to use, modify, and distribute — just keep the original license in p
 
 ## ✨ Author
 
-Shlok Khandelwal  
+Anushka Vishnu Kasle  
 `2nd-year ECE | Digital Design & Verilog Enthusiast`  
 **Built from gates, grounded in curiosity.**
